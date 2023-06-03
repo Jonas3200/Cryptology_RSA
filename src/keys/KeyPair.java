@@ -81,7 +81,6 @@ public class KeyPair {
 
 		} while (wrongInput = !(Euclidian.euclideanAlgorithm(exponent, phiN, false) == 1) );
 
-		scan.close();
 		
 		System.out.println();
 
