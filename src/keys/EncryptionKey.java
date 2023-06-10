@@ -1,7 +1,6 @@
 package keys;
 
 import java.math.BigInteger;
-import java.util.Arrays;
 
 import algorithms.Encoding;
 
@@ -49,7 +48,7 @@ public class EncryptionKey {
 
 	public int[] encrypt(String message) {
 		
-		int[] unicode = Encoding.toUnicode(message);
+		int[] unicode = Encoding.toAscii(message);
 		
 		
 		int[] encrypted = new int[unicode.length];
@@ -59,7 +58,6 @@ public class EncryptionKey {
 			BigInteger base = new BigInteger("" + letter);
 			encrypted[i++] = Integer.parseInt(base.modPow(new BigInteger("" + this.exponent), new BigInteger("" + this.n)).toString());
 		}
-		
 		
 		return encrypted;
 	}
